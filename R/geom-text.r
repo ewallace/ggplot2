@@ -86,6 +86,10 @@
 #'   scale_colour_discrete(l = 40)
 #' p + geom_label(aes(fill = factor(cyl)), colour = "white", fontface = "bold")
 #'
+#' # Change legend label from a to a dot
+#' p + geom_text(aes(colour = factor(cyl))) +
+#'   scale_colour_hue(guide = guide_legend(override.aes = aes(label = "●")))
+#'
 #' p + geom_text(aes(size = wt))
 #' # Scale height of text, rather than sqrt(height)
 #' p +
@@ -152,6 +156,7 @@
 #' ggplot(df, aes(x, y)) +
 #'   geom_text(aes(label = text), vjust = "inward", hjust = "inward")
 #' }
+guide = guide_legend(override.aes = aes(label = "●")))
 geom_text <- function(mapping = NULL, data = NULL,
                       stat = "identity", position = "identity",
                       ...,
